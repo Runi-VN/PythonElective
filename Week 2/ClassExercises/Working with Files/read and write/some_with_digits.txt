@@ -1,0 +1,11 @@
+<for ex2 - only retrieve lines starting with a number>
+hello
+my
+1 22
+name2
+is 99
+3 35353
+testtest test aaaaaaaaaaaaaaaaa
+3testetst
+@no
+7 goodbye
