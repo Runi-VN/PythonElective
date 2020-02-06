@@ -158,3 +158,9 @@ example.html
 ClassExercises/.vscode/
 
 Week 2/ClassExercises/Modules/init.py
+
+Week 2/ClassExercises/__init__.py
+
+Week 2/ClassExercises/CLI Programs/__init__.py
+
+Week 2/ClassExercises/Modules/__init__.py
