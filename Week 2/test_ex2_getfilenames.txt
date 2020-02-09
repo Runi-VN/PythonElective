@@ -1,0 +1,8 @@
+ClassExercises
+Exercise1.py
+Exercise2_utils.py
+main.py
+read_csv_extended_result.txt
+test_ex2_getfilenames.txt
+test_writeListToFile.txt
+__pycache__
