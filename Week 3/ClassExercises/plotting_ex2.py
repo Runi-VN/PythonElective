@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 # 1.1 Using this dict: {} display a bar plot of the people and there ages sorted by age.
 # 1.2 Add title and x and y axis labels to the bar plot
 
-# 2.1 Using the kkdata module with population data from Copenhagen display a line graph showing the population development over time (year on x and population on y)
 
 person_dict = {'Holger': 25, 'Helga': 54, 'Hasse': 76,
                'Halvor': 12, 'Hassan': 43, 'Hulda': 31, 'Hansi': 102}
@@ -32,3 +31,5 @@ plt.bar(list(person_dict_sorted.keys()), list(
     person_dict_sorted.values()), width=0.5, align='center')
 
 plt.show()
+
+# 2.1 Using the kkdata module with population data from Copenhagen display a line graph showing the population development over time (year on x and population on y)

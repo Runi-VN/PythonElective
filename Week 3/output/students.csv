@@ -1,0 +1,23 @@
+stud_name,course_name,teacher,ects,classroom,grades,img_url
+Lars,Datamatiker,Hr. Jørgensen,20,305,-3,https://www.nonexistant.dk/
+John,Testing,Frk. Knudsen,20,204,12,https://www.url1.com/
+John,Backend,Fru. Karlsen,5,305,10,https://www.url1.com/
+John,Datamatiker,Hr. Jørgensen,20,305,-3,https://www.url1.com/
+John,Testing,Frk. Knudsen,20,204,12,https://www.example.com/
+Lotte,Datamatiker,Hr. Jørgensen,20,305,-3,https://www.url1.com/
+Absalon,Testing,Frk. Knudsen,20,204,12,https://www.nonexistant.dk/
+Lotte,Datamatiker,Hr. Jørgensen,20,305,-3,http://www.unsafe.dev/
+Lotte,Backend,Fru. Karlsen,5,305,10,http://www.unsafe.dev/
+Bo,Testing,Frk. Knudsen,20,204,12,http://www.unsafe.dev/
+Bo,Backend,Fru. Karlsen,5,305,10,http://www.unsafe.dev/
+Bo,Datamatiker,Hr. Jørgensen,20,305,-3,http://www.unsafe.dev/
+Bo,Skorstensfejer,Fru. Karlsen,5,102,7,http://www.unsafe.dev/
+Bo,Backend,Fru. Karlsen,5,305,10,http://www.unsafe.dev/
+John,Skorstensfejer,Fru. Karlsen,5,102,7,https://www.example.com/
+John,Testing,Frk. Knudsen,20,204,12,https://www.example.com/
+John,Backend,Fru. Karlsen,5,305,10,https://www.example.com/
+John,Datamatiker,Hr. Jørgensen,20,305,-3,https://www.example.com/
+Bo,Backend,Fru. Karlsen,5,305,10,https://www.example.com/
+Bo,Skorstensfejer,Fru. Karlsen,5,102,7,https://www.example.com/
+Bo,Datamatiker,Hr. Jørgensen,20,305,-3,https://www.example.com/
+Bo,Testing,Frk. Knudsen,20,204,12,https://www.example.com/
