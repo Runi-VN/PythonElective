@@ -55,7 +55,7 @@ def create_student_course_barchart(students: list):
     for student in students:
         for course in student.get_datasheet_courses():
             course_data[course._name] = course_data.get(course._name, 0) + 1
-            # default value = 0 if_not_exist else increment by 1
+            # default value = 0 if_not_exist, increment by 1
     # plt.figure()
     plt.xlabel('Course')
     plt.ylabel('No. of students')
