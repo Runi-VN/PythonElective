@@ -26,13 +26,13 @@ def exercise1():
     soup = getData(_URL + '?km=(1-)')
     amount_of_cars_text = soup.select(
         'tr[class=search-result-separator] > td')[0].text
-    #import re
-    #string1 = "498results should get"
+    # import re
+    # string1 = "498results should get"
     # int(re.search(r'\d+', string1).group()) https://stackoverflow.com/a/11339230
     return int(''.join(x for x in amount_of_cars_text if x.isdigit()))
 
 
-#print('Amount of used cars available:', exercise1())
+# print('Amount of used cars available:', exercise1())
 
 
 def exercise2():
@@ -60,17 +60,17 @@ def exercise2():
 
 # exercise2()
 
-# browser = webdriver.Chrome()
-# browser.get(_URL)
-# browser.implicitly_wait(3)  # load
-
 
 def exercise3():
     """
-    3. 
+    3.
     Åben de 5 dyreste biler med selenium i decending order
     og vis dem i et barchart
     """
+
+    browser = webdriver.Chrome()
+    browser.get(_URL)
+    browser.implicitly_wait(3)  # load
 
     # get rid of GDRP button blocking the whole damn screen
     gdrp_button = browser.find_element_by_id('gdpr-notice__accept')
@@ -103,32 +103,40 @@ def exercise3():
     return cars
 
 
-def ex4():
-    data = [{'name': 'Porsche 918 Spyder 4,6 Benzin aut. Automatgear...', 'url': 'https://www.dba.dk/porsche-918-spyder-46-benzin/id-504944706/', 'price': '10125000'}, {'name': 'Ferrari 458 4,5 Italia DCT Benzin aut....', 'url': 'https://www.dba.dk/ferrari-458-45-italia-dct/id-505162615/', 'price': '2379900'}, {'name': 'Ferrari F512 M 4,9 Benzin model&amp;#229;r 1995 km 33000...',
-                                                                                                                                                                                                                                                                                                                         'url': 'https://www.dba.dk/ferrari-f512-m-49-benzin/id-503913036/', 'price': '1953600'}, {'name': 'Ferrari 458 4,5 Speciale DCT Benzin aut....', 'url': 'https://www.dba.dk/ferrari-458-45-speciale-dct/id-505209289/', 'price': '1949900'}, {'name': 'Mercedes SL65 6,0 AMG Black Series aut. Benzin...', 'url': 'https://www.dba.dk/mercedes-sl65-60-amg-black/id-504442331/', 'price': '1878600'}]
-    #
+# print(exercise3())
+
+
+def exercise3_bargraph(data):
+    """
+    Creates the barchart required for ex3
+    """
+
+    # setup figure
     plt.figure()  # figsize=[8, 5]
+    plt.ticklabel_format(style='plain')  # no scientific notation (10^e7)
     plt.title('Top 5 most expensive cars on DBA')
     plt.xlabel('Cars')
     plt.ylabel('Prices')
     plt.grid(axis='y', linestyle='--', zorder=0)
-    # plt.xticks(rotation=45)
-    plt.rcParams['xtick.labelsize'] = 'small'
-    car_names = []
-    car_prices = []
+    plt.xticks(rotation=45, ha='right')
+    # plt.rcParams['xtick.labelsize'] = 'small'
+    # car_names = []
+    # car_prices = []
     for car in data:
         print(car)
-        car_names.append(car['name'][:13])
-        car_prices.append(car['price'])
-        # plt.bar(car['name'][:13], car['price'],
-        #         zorder=3, width=0.5, align='center')
-    myDict = dict(zip(car_names, car_prices))
-    print('dict', myDict)
-    plt.bar(myDict.keys(), myDict.values(),
-            zorder=3, width=0.5, align='center')
+        # name = car['url'][19:46]  # could have used name too
+        name = car['name'][:20]
+        price = int(car['price'])
+        # car_names.append(car['name'][:18])
+        # car_prices.append(int(car['price']))  # IMPORTANT: Convert to int
+        plt.bar(name, price, zorder=3, width=0.3)
+    # myDict = dict(zip(car_names, car_prices))
+    # print('dict', myDict)
+    # plt.bar(myDict.keys(), myDict.values(),
+    #        zorder=3, width=0.5, align='center')
+    plt.tight_layout()  # re-size to fit labels
     plt.show()
-    # can't really get the barplot to work. :/ everything else does tho
 
 
-ex4()
-# print(exercise3())
+# exercise3_bargraph([{'name': 'Porsche 918 Spyder 4,6 Benzin aut. Automatgear...', 'url': 'https://www.dba.dk/porsche-918-spyder-46-benzin/id-504944706/', 'price': '10125000'}, {'name': 'Ferrari 458 4,5 Italia DCT Benzin aut....', 'url': 'https://www.dba.dk/ferrari-458-45-italia-dct/id-505162615/', 'price': '2379900'}, {'name': 'Ferrari F512 M 4,9 Benzin model&amp;#229;r 1995 km 33000...',
+#                                                                                                                                                                                                                                                                                                                                 'url': 'https://www.dba.dk/ferrari-f512-m-49-benzin/id-503913036/', 'price': '1953600'}, {'name': 'Ferrari 458 4,5 Speciale DCT Benzin aut....', 'url': 'https://www.dba.dk/ferrari-458-45-speciale-dct/id-505209289/', 'price': '1949900'}, {'name': 'Mercedes SL65 6,0 AMG Black Series aut. Benzin...', 'url': 'https://www.dba.dk/mercedes-sl65-60-amg-black/id-504442331/', 'price': '1878600'}])

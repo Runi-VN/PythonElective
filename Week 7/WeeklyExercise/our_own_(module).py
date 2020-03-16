@@ -96,6 +96,7 @@ def exercise3():
     print(stock_percentage)
     # plt.figure()
     # plt.bar()
+    #
 
 
 exercise3()
