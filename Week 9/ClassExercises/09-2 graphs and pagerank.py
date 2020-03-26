@@ -23,7 +23,7 @@ def gunzip_shutil(source_filepath, dest_filepath, block_size=65536):
 
 #gunzip_shutil('twitter_combined.txt.gz', 'twitter_combined.txt')
 
-graph = nx.read_edgelist('twitter_combined.txt')
+graph = nx.read_edgelist('./twitter_combined.txt')
 print(nx.info(graph))
 
 # get degrees for every node
